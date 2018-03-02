@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>大V云笔记</title>
+    <style>
+        li{color:darkgreen;}
+    </style>
+</head>
+<body>
+{% extends "myapp/base.html" %}
+{%block header %}
+<h2>主题</h2>
+{%endblock header %}
+
+{% block content%}
+
+<ul>
+    {%for topic in topics%}
+      <li>
+          <h3>
+          <a href="{% url 'myapp:topic' topic.id%}">{{ topic}}</a>
+          </h3>
+      </li>
+    {%empty%}
+    <li>然而还没有任何主题！</li>
+    {%endfor%}
+</ul>
+<!--模板里面的url 是用：不是 / 请注意-->
+
+<h2><a href="{% url 'myapp:new_topic'%}">添加一个新主题:</a></h2>
+{% endblock content%}
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+{% extends 'myapp/base.html' %}
+{% load bootstrap3%}
+{% block header%}
+<h3><a href="{% url 'myapp:topic' topic.id %}">{{ topic }}</a></h3>
+{% endblock header%}
+{%block content%}
+<p> 编辑笔记: </p>
+<form action="{% url 'myapp:edit_entry' entry.id %}" method="post" class="form">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons%}
+    <button name="submit" class="btn btn-primary">保存修改</button>
+    {% endbuttons%}
+</form>
+{% endblock content %}
