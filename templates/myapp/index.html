@@ -8,14 +8,14 @@
 <p>{% extends "myapp/base.html"%}</p>
 
 {%block header%}
-    <div class="jumbotron">
-        <h1>欢迎来到大V学习笔记！</h1>
-    </div>
+<div class="jumbotron">
+    <h1>欢迎来到大V学习笔记！</h1>
+</div>
 {% endblock header%}
 {%block content%}
 <h2>
-       <a href="{% url 'users:register'%}">注册一个账户</a>
-      即刻拥有自己的学习笔记！
+    <a href="{% url 'users:register'%}">注册一个账户</a>
+    即刻拥有自己的学习笔记！
 </h2>
 
 <h2>当你学习一项新的知识的时候，只需为它建立一个主题，就可以在这个主题里面添加不同的笔记了。</h2>

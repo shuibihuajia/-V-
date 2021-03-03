@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <title>大V云笔记</title>
     <style>
-        li{color:darkgreen;}
+        li {
+            color: darkgreen;
+        }
     </style>
 </head>
 <body>
@@ -17,11 +19,11 @@
 
 <ul>
     {%for topic in topics%}
-      <li>
-          <h3>
-          <a href="{% url 'myapp:topic' topic.id%}">{{ topic}}</a>
-          </h3>
-      </li>
+    <li>
+        <h3>
+            <a href="{% url 'myapp:topic' topic.id%}">{{ topic}}</a>
+        </h3>
+    </li>
     {%empty%}
     <li>然而还没有任何主题！</li>
     {%endfor%}

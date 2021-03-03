@@ -9,6 +9,7 @@ def logout_view(request):
     logout(request)
     return HttpResponseRedirect(reverse('myapp:index'))
 
+
 def register(request):
     if request.method != 'POST':
         form = UserCreationForm()
@@ -18,10 +19,7 @@ def register(request):
             new_user = form.save()
             authenticated_user = authenticate(username=new_user.username,
                                               password=request.POST['password1'])
-            login(request,authenticated_user)
+            login(request, authenticated_user)
             return HttpResponseRedirect(reverse('myapp:index'))
-    context = {'form':form}
-    return render(request, 'users/register.html',context)
-
-
-
+    context = {'form': form}
+    return render(request, 'users/register.html', context)

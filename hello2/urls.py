@@ -2,9 +2,8 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.urls import path
 
-urlpatterns =[
+urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'', include('myapp.urls', namespace='myapp')),
-    url(r'^users/', include('users.urls',namespace="users"))
+    url(r'^users/', include('users.urls', namespace="users"))
 ]
-
